@@ -1,0 +1,199 @@
+/* JinStockList 전용 스타일. 다른 화면에 번지지 않도록 모두 .jin-stock 아래로 한정 */
+.jin-stock {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 32px 24px;
+  background: #0b1426;
+  color: #cbd5e1;
+  color-scheme: dark;
+  text-align: left;
+  font-size: 14px;
+}
+
+.jin-stock h2 {
+  margin: 0 0 8px;
+  color: #f1f5f9;
+}
+
+.jin-stock .jin-desc {
+  color: #94a3b8;
+}
+
+.jin-stock .jin-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: 20px 0 16px;
+  padding: 14px 16px;
+  background: #111d35;
+  border: 1px solid #22314f;
+  border-radius: 10px;
+}
+
+.jin-stock label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jin-stock select,
+.jin-stock input[type="number"] {
+  padding: 7px 10px;
+  font: inherit;
+  color: #e2e8f0;
+  background: #0b1426;
+  border: 1px solid #334568;
+  border-radius: 6px;
+}
+
+.jin-stock input[type="number"] {
+  width: 100px;
+}
+
+.jin-stock input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #3b82f6;
+}
+
+.jin-stock .jin-table-wrap {
+  overflow-x: auto;
+  background: #111d35;
+  border: 1px solid #22314f;
+  border-radius: 10px;
+}
+
+.jin-stock table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.jin-stock th,
+.jin-stock td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid #22314f;
+}
+
+.jin-stock th {
+  background: #172642;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.jin-stock tbody tr:last-child > td {
+  border-bottom: none;
+}
+
+.jin-stock tbody tr:hover > td {
+  background: #16233f;
+}
+
+.jin-stock .jin-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.jin-stock .jin-id {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.jin-stock .jin-empty {
+  text-align: center;
+  color: #94a3b8;
+}
+
+.jin-stock .jin-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.jin-stock .jin-badge-low {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.45);
+}
+
+.jin-stock .jin-badge-ok {
+  color: #86efac;
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.jin-stock .jin-btn {
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 13px;
+  color: #fff;
+  background: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.jin-stock .jin-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.jin-stock .jin-btn-secondary {
+  color: #cbd5e1;
+  background: transparent;
+  border-color: #334568;
+}
+
+.jin-stock .jin-btn-secondary:hover:not(:disabled) {
+  background: #22314f;
+}
+
+.jin-stock .jin-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.jin-stock :is(select, input, button):focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+.jin-stock .jin-order {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  padding: 14px 16px;
+  white-space: normal;
+  background: #0b1426;
+  border: 1px solid #2563eb;
+  border-radius: 8px;
+}
+
+.jin-stock .jin-order-title {
+  width: 100%;
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.jin-stock .jin-message {
+  padding: 10px 0;
+}
+
+.jin-stock .jin-order .jin-message {
+  width: 100%;
+  padding: 0;
+}
+
+.jin-stock .jin-error {
+  color: #fca5a5;
+}
+
+.jin-stock .jin-success {
+  color: #86efac;
+}
