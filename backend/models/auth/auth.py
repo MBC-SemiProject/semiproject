@@ -4,10 +4,8 @@ from sqlalchemy.orm import Session
 from datetime import date
 import db
 from db import get_db
-from passlib.context import CryptContext
 
 router = APIRouter(prefix="/api/auth", tags=["Authentication"])
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # 1. 회원가입 요청 데이터 구조
 class SignupRequest(BaseModel):
@@ -30,14 +28,12 @@ class LoginRequest(BaseModel):
 # 3. 회원가입 엔드포인트
 @router.post("/signup")
 def signup(data: SignupRequest, session: Session = Depends(get_db)):
-    
-    hashed_password = pwd_context.hash(data.password)
 
     new_user = db.create_user(
         session,
         employee_number=data.employee_number,
         email=data.email,
-        password=hashed_password,
+        password=data.password,
         name=data.name,
         department=data.department,
         phone=data.phone,
@@ -58,7 +54,7 @@ def signup(data: SignupRequest, session: Session = Depends(get_db)):
 def login(data: LoginRequest, session: Session = Depends(get_db)):
     user = db.get_employee_number(session, data.employee_number)
     
-    if not user or not pwd_context.verify(data.password, user.password):
+    if not user or user.password != data.password:
         raise HTTPException(status_code=401, detail="사번 또는 비밀번호가 올바르지 않습니다.")
     
     return {
